@@ -1,0 +1,163 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>RegistrationForm_v10 by Colorlib</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- LINEARICONS -->
+    <link rel="stylesheet" href="~/colorlib-regform-26/fonts/linearicons/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="~/colorlib-regform-26/css/style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="inner">
+            <img src="~/colorlib-regform-26/images/image-1.png" alt="" class="image-1">
+            @using (Html.BeginForm("SignIn", "Login", FormMethod.Post))
+            {
+                <form action="">
+                    <h3>Bir Hesabın Yok Mu?</h3>
+                    <div class="form-holder">
+                        <span class="lnr lnr-user"></span>
+                        <input id="userName" required name="UserName" type="text" class="form-control" placeholder="Username">
+                        <span id="userNameError" style="color:red;display:none;">Please enter a form name</span>
+                    </div>
+
+                    <div class="form-holder">
+                        <span class="lnr lnr-lock"></span>
+                        <input id="password" required name="Password" type="password" class="form-control" placeholder="Password">
+                        <span id="passwordError" style="color:red;display:none;">Please enter a form name</span>
+                    </div>
+
+                    <button>
+                        <span>Kayıt Ol</span>
+                    </button>
+                    <br />
+                    <a style="margin-left:120px;" class="btn btn-warning" href="/Login/Index/">Giriş</a>
+                </form>
+            }
+            <img src="~/colorlib-regform-26/images/image-2.png" alt="" class="image-2">
+        </div>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="~/colorlib-regform-26/js/jquery-3.3.1.min.js"></script>
+    <script src="~/colorlib-regform-26/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#userName').submit(function (e) {
+                e.preventDefault();
+
+                var formName = $('#userName').val();
+
+                if (formName == '') {
+                    $('#userNameError').show();
+                } else {
+                    $('#userNameError').hide();
+                    // formu gönder
+                    document.myForm.submit();
+                }
+            });
+        });
+
+
+        $(document).ready(function () {
+            $('#password').submit(function (e) {
+                e.preventDefault();
+
+                var formName = $('#password').val();
+
+                if (formName == '') {
+                    $('#passwordError').show();
+                } else {
+                    $('#passwordError').hide();
+
+                    document.myForm.submit();
+                }
+            });
+        });
+
+    </script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

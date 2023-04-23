@@ -1,0 +1,156 @@
+﻿@using ProjectLena.Entities.Concrete
+@model ProjectLena.Entities.Concrete.Form
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("FormDetails", "Form", FormMethod.Post))
+
+{
+    <br />
+    <div class="container">
+        <div class="form-group">
+            @Html.Label("Form Id")
+            @Html.TextBoxFor(x => x.FormId, new { @class = "form-control", @readonly = "readonly" })
+            <br />
+            @Html.Label("Form Adı")
+            @Html.TextBoxFor(x => x.FormName, new { @class = "form-control", @readonly = "readonly" })
+            <br />
+            @Html.Label("Form Açıklaması")
+            @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @readonly = "readonly" })
+            <br />
+            @Html.Label("Form Oluşturulma Tarihi")
+            @Html.TextBoxFor(x => x.CreateAt, new { @class = "form-control", @readonly = "readonly" })
+            <br />
+            @Html.Label("Formu Oluşturan Kişinin Adı")
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @readonly = "readonly" })
+            <br />
+            @Html.Label("Formu Oluşturan Kişinin Soyadı")
+            @Html.TextBoxFor(x => x.Surname, new { @class = "form-control", @readonly = "readonly" })
+            <br />
+            @Html.Label("Formu Oluşturan Kişinin Yaşı")
+            @Html.TextBoxFor(x => x.Age, new { @class = "form-control", @readonly = "readonly" })
+            <br />
+
+            <a class="btn btn-success" href="/Form/Index/" >Formlar Sayfasına Dön</a>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+}
+
+

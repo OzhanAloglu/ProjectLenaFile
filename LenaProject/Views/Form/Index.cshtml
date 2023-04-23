@@ -1,0 +1,306 @@
+﻿@using ProjectLena.Entities.Concrete
+@model List<Form>
+
+
+@{
+    Layout = null;
+}
+
+
+<div class="container">
+
+    @using (Html.BeginForm("Index", "Form", FormMethod.Post))
+    {
+        <div style="margin-top:30px;">
+           <p>
+               <b>Aranacak Form İsmi:</b> @Html.TextBox("p")
+               <input  type="submit" value="Ara"/>
+           </p>
+        </div>
+    }
+
+</div>
+
+<div class="container">
+    <div>
+        <table class="table table-bordered">
+            <tr>
+                <th>Form Numarası</th>
+                <th>Form Adı</th>
+                <th>Form Detayları</th>
+
+            </tr>
+
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@item.FormId</td>
+                        <td>@item.FormName</td>
+                        <td><a href="/Form/FormDetails/@item.FormId" class="btn btn-success">Form Detayları</a></td>
+
+                    </tr>
+
+                }
+            </tbody>
+
+
+        </table>
+
+      
+
+        <br />
+        <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+
+            Form Oluştur
+
+        </button>
+
+        <div class="modal" id="Modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Form Oluşturma Metin Girişi</h2>
+                    </div>
+                    <form method="post" action="/Form/AddForm/">
+                        <div class="modal-body">
+
+                            <label>Form Adı<span class="zorunlu" style="color:red">*</span></label>
+                            <input type="text" name="FormName" class="form-control" id="frmName" required />
+                            <span id="formNameError" style="color:red;display:none;">Please enter a form name</span>
+
+                            <br />
+
+
+                            <label>Form Açıklaması</label>
+                            <textarea asp-for="Description" id="desc" type="text" name="Description" class="form-control" required> </textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                            <br />
+
+
+                            <label>Oluşturan Kişinin Adı<span class="zorunlu" style="color:red">*</span></label>
+                            <input id="createName" type="text" name="Name" class="form-control" required />
+                            <span id="createNameError" style="color:red;display:none;">Please enter a form name</span>
+                            <br />
+
+
+                            <label>Oluşturan Kişinin Soyadı<span class="zorunlu" style="color:red">*</span></label>
+                            <input id="createSurname" type="text" name="Surname" class="form-control" required />
+                            <span id="createSurNameError" style="color:red;display:none;">Please enter a form name</span>
+                            <br />
+
+
+                            <label>Oluşturan Kişinin Yaşı</label>
+
+                            <input type="text" name="Age" class="form-control" />
+                            <br />
+
+
+                            <button class="btn btn-success">Kaydet</button>
+                            <button class="btn btn-danger" data-dismiss="modal" >Vazgeç</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<script>
+
+    $(document).ready(function () {
+        $('#frmName').submit(function (e) {
+            e.preventDefault();
+
+            var formName = $('#formName').val();
+
+            if (formName == '') {
+                $('#formNameError').show();
+            } else {
+                $('#formNameError').hide();
+                // formu gönder
+                document.myForm.submit();
+            }
+        });
+    });
+
+
+    $(document).ready(function () {
+        $('#desc').submit(function (e) {
+            e.preventDefault();
+
+            var formName = $('#desc').val();
+
+            if (formName == '') {
+                $('#Description').show();
+            } else {
+                $('#Description').hide();
+
+                document.myForm.submit();
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $('#createName').submit(function (e) {
+            e.preventDefault();
+
+            var formName = $('#createName').val();
+
+            if (formName == '') {
+                $('#createNameError').show();
+            } else {
+                $('#createNameError').hide();
+
+                document.myForm.submit();
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $('#createSurname').submit(function (e) {
+            e.preventDefault();
+
+            var formName = $('#createSurname').val();
+
+            if (formName == '') {
+                $('#createSurNameError').show();
+            } else {
+                $('#createSurNameError').hide();
+
+                document.myForm.submit();
+            }
+        });
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- jQuery, Popper.js, and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
